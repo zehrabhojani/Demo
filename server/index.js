@@ -19,6 +19,10 @@ const RegisterSchema=mongoose.Schema({
 })
 const RegisterModel=mongoose.model('register',RegisterSchema)  //register is collection name
 
+app.get("/", (req,res)=>{
+    res.json("hello")
+}
+
 app.post("/createReg",(req,res)=>{
     const { name, email, password } = req.body;
     RegisterModel.findOne({ email: email })
