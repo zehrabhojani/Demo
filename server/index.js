@@ -2,9 +2,15 @@ const express =require('express');
 const mongoose =require('mongoose');
 const cors = require('cors');
 const app = express();
-app.use(cors())
+app.use(cors(
+    {
+        origin:["https://deploy-mern-1whq.vercel.app"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+))
 app.use(express.json())
-mongoose.connect('mongodb://127.0.0.1:27017/registration')
+mongoose.connect('mongodb+srv://zehrabhojani123:<Zehra123>@demo.em0a6.mongodb.net/test?retryWrites=true&w=majority&appName=Demo')
 
 const RegisterSchema=mongoose.Schema({
     name:String,
